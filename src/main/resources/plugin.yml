@@ -1,0 +1,14 @@
+name: MultiAnnounce
+version: ${project.version}
+main: me.capitainecat0.multiannounce.MultiAnnounce
+api-version: 1.13
+authors: [ CapitaineCat0 ]
+description: Plugin d'annonces de la série Multi
+website: htps://discord.gg/WxcEu7j
+commands:
+  multiannouncements:
+    description: commande de MultiAnnounce
+    aliases:
+      - ma
+      - multia
+      - multiannonunce
