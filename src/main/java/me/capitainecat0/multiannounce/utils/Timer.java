@@ -15,7 +15,6 @@ public class Timer extends BukkitRunnable {
     private int LastMessage = 0;
     public Timer(MultiAnnounce plugin){
         this.messages = plugin.getConfig().getStringList("messages");
-        this.random = plugin.getConfig().getBoolean("random-messages");
     }
     @Override
     public void run() {
@@ -25,14 +24,6 @@ public class Timer extends BukkitRunnable {
                 message = messages.get(LastMessage + 1);
                 LastMessage++;
             }
-        }else{
-            Random random = new Random();
-            int nextMessage = random.nextInt(messages.size());
-            while(nextMessage == LastMessage){
-                random.nextInt(messages.size());
-            }
-            message = messages.get(nextMessage);
-            LastMessage = nextMessage;
         }
         for(Player player : Bukkit.getOnlinePlayers()){
             player.sendMessage(message.replace("&", "§"));
